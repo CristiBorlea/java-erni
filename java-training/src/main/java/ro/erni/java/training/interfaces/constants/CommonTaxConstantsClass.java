@@ -2,7 +2,7 @@ package ro.erni.java.training.interfaces.constants;
 
 import java.math.BigDecimal;
 
-public class CommonTaxConstantsClass {
+public final class CommonTaxConstantsClass {
 
     public static final String MAIN_KANTON_NAME = "Zuerich";
 

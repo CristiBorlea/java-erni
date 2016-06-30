@@ -7,6 +7,7 @@ public class MainApp {
 	Figure dreptunghi = new Figure(10,30);
 	System.out.println(cerc.area());
 	System.out.println(dreptunghi.area());
+	
     }
 
 }

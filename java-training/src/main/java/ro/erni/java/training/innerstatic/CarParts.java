@@ -3,6 +3,7 @@ package ro.erni.java.training.innerstatic;
 public class CarParts {
     
     private int id;
+    //private CarCollor collor;
     
     private static int factoryID = 123;
     
