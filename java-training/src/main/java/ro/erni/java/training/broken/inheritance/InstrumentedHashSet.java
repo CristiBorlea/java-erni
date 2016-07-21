@@ -7,6 +7,7 @@ import java.util.HashSet;
  *Broken - Innapropriate use of inheritance!
  *
  */
+@SuppressWarnings({ "serial", "rawtypes" })
 public class InstrumentedHashSet<E> extends HashSet {
 
     //The number of attemted element insertions
@@ -20,7 +21,8 @@ public class InstrumentedHashSet<E> extends HashSet {
         super(initCap,loadFactor);
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public boolean add(Object e) {
         addCount++;
         return super.add(e);
