@@ -3,7 +3,8 @@ package ro.erni.java.training.composition;
 public class Apple {
 
 	private Fruit fruit = new Fruit();
-
+	private Fruit marulDiscordiei = new Fruit();
+	
 	Apple() {
 	}
 
