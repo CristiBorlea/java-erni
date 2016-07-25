@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 /**
  * @author cara
  *
- *Implementing a constant interface causes this implementation detail to leak into the class’s exported API. It
+ *Implementing a constant interface causes this implementation detail to leak into the class's exported API. It
 is of no consequence to the users of a class that the class implements a constant
 interface. In fact, it may even confuse them. Worse, it represents a commitment: if
 in a future release the class is modified so that it no longer needs to use the constants,
