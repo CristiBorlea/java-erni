@@ -1,7 +1,7 @@
 package ro.erni.java.training.open.closed.principle;
 
 public class Circle extends Shape {
-	Circle() {
+	public Circle() {
 		super.m_type = 2;
 	}
 
@@ -9,5 +9,9 @@ public class Circle extends Shape {
 	void draw() {
 		System.out.println("Circle is drown ");
 
+	}
+	public double calculareArie(int r){
+		 double rez = (3.14*(r*r));
+		return rez;
 	}
 }

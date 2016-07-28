@@ -5,7 +5,7 @@ public class Apple {
 	private Fruit fruit = new Fruit();
 	private Fruit marulDiscordiei = new Fruit();
 	
-	Apple() {
+	public Apple() {
 	}
 
 	// public int peel() {

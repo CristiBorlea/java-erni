@@ -3,6 +3,8 @@ package ro.erni.java.training.function.objects;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.omg.Messaging.SyncScopeHelper;
+
 public class ShoppingCart {
     
     //List of items
