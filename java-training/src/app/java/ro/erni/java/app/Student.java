@@ -1,23 +1,35 @@
 package ro.erni.java.app;
 
+import java.time.LocalDate;
 
-import java.sql.Date;
+import ro.erni.java.interf.StudentsInterface;
 
-public class Student {
+public class Student implements StudentsInterface {
 
 	private String firstName;
+
 	private String lastName;
-	private Date birthDate;
+
+	private LocalDate birthDate;
+
 	private int averageMark;
-	
-	public Student(String firstName,String lastName,Date birthDate,int averageMark){
-		this.firstName=firstName;
-		this.lastName=lastName;
-		this.birthDate=birthDate;
-		this.averageMark=averageMark;
+
+	public Student(final String firstName, final String lastName, final LocalDate birthDate,
+			final Integer averageMark) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthDate = birthDate;
+		this.averageMark = averageMark;
 	}
-	
-	public String getFirstName(){
+
+	public Student(final Student s) {
+		this.firstName = s.getFirstName();
+		this.lastName = s.getLastName();
+		this.birthDate = s.getBirthDate();
+		this.averageMark = s.getAverageMark();
+	}
+
+	public String getFirstName() {
 		return this.firstName;
 	}
 
@@ -25,15 +37,15 @@ public class Student {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
+	public void setLastName(final String lastName) {
 		this.lastName = lastName;
 	}
 
-	public Date getBirthDate() {
+	public LocalDate getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(final LocalDate birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -41,11 +53,16 @@ public class Student {
 		return averageMark;
 	}
 
-	public void setAverageMark(int averageMark) {
+	public void setAverageMark(final int averageMark) {
 		this.averageMark = averageMark;
 	}
 
-	public void setFirstName(String firstName) {
+	public void setFirstName(final String firstName) {
 		this.firstName = firstName;
+	}
+
+	@Override
+	public String toString() {
+		return lastName + ", " + firstName + ", " + birthDate;
 	}
 }
