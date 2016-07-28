@@ -35,7 +35,12 @@ public class StudentMain {
 
 		// Sorting by averageMark
 		System.out.println("\nStudents sort by average mark:");
-		students.sort((s1, s2) -> Integer.compare(s1.getAverageMark(), s2.getAverageMark()));
+		students.sort((s1, s2) -> Integer.compare(s2.getAverageMark(), s1.getAverageMark()));
+		students.forEach(s -> System.out.println(s.getFirstName() + " " + s.getAverageMark()));
+				
+		// Sorting by averageMarkReversed
+		System.out.println("\nStudents sort by average mark reversed:");
+		students.sort((s2, s1) -> Integer.compare(s2.getAverageMark(), s1.getAverageMark()));
 		students.forEach(s -> System.out.println(s.getFirstName() + " " + s.getAverageMark()));
 
 		getStudentsFromYear(students, 1991);
@@ -59,5 +64,6 @@ public class StudentMain {
 		final List<Student> studentsWithMark = students.stream().filter(s -> s.getAverageMark() == mark)
 				.map(Student::new).collect(Collectors.toList());
 		studentsWithMark.forEach(s -> System.out.println(s.getFirstName() + " " + s.getAverageMark()));
+
 	}
 }
