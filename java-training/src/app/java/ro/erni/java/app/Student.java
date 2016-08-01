@@ -10,22 +10,21 @@ public class Student implements StudentsInterface {
 
 	private String lastName;
 
-	private LocalDate birthDate;
+	private LocalDate birthLocalDate;
 
 	private int averageMark;
 
-	public Student(final String firstName, final String lastName, final LocalDate birthDate,
-			final Integer averageMark) {
+	public Student(String firstName, String lastName, LocalDate birthLocalDate, int averageMark) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.birthDate = birthDate;
+		this.birthLocalDate = birthLocalDate;
 		this.averageMark = averageMark;
 	}
 
-	public Student(final Student s) {
+	public Student(Student s) {
 		this.firstName = s.getFirstName();
 		this.lastName = s.getLastName();
-		this.birthDate = s.getBirthDate();
+		this.birthLocalDate = s.getBirthLocalDate();
 		this.averageMark = s.getAverageMark();
 	}
 
@@ -37,33 +36,33 @@ public class Student implements StudentsInterface {
 		return lastName;
 	}
 
-	public void setLastName(final String lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
-	public LocalDate getBirthDate() {
-		return birthDate;
+	public LocalDate getBirthLocalDate() {
+		return birthLocalDate;
 	}
 
-	public void setBirthDate(final LocalDate birthDate) {
-		this.birthDate = birthDate;
+	public void setBirthLocalDate(LocalDate birthLocalDate) {
+		this.birthLocalDate = birthLocalDate;
 	}
 
 	public int getAverageMark() {
 		return averageMark;
 	}
 
-	public void setAverageMark(final int averageMark) {
+	public void setAverageMark(int averageMark) {
 		this.averageMark = averageMark;
 	}
 
-	public void setFirstName(final String firstName) {
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
 	@Override
 	public String toString() {
-		return lastName + ", " + firstName + ", " + birthDate;
+		return firstName + ", " + lastName;
 		
 		
 	}
