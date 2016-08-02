@@ -45,7 +45,7 @@ public class StudentMain {
 		students.sort((s2, s1) -> Integer.compare(s2.getAverageMark(), s1.getAverageMark()));
 		students.forEach(s -> System.out.println(s.getFirstName() + " " + s.getAverageMark()));
 
-		getStudentsWithC(students, "c");
+		getStudentsWithCh(students, "c");
 		getStudentsFromYear(students, 1991);
 		getStudentsFromYear(students, 1990);
 		getStudentsFromYear(students, 1994);
@@ -56,7 +56,7 @@ public class StudentMain {
 		chekIfEven(students);
 	}
 
-	// Students by ears
+	// Students by year
 	private static void getStudentsFromYear(List<Student> students, int year) {
 		System.out.println("\nStudents from" + " " + year + ":");
 		List<Student> studentsFromYear = students.stream().filter(s -> s.getBirthLocalDate().getYear() == year)
@@ -80,19 +80,19 @@ public class StudentMain {
 		System.out.println("\nStudents grouped by First name:" + "\n" + collect);
 	}
 
-	private static void getStudentsWithC(List<Student> students, String ch) {
-		System.out.println("\nIs students with 'c'? : -> ");
-		List<Student> studentsWithC = students.stream().filter(s -> s.getLastName().toLowerCase().contains(ch))
+	private static void getStudentsWithCh(List<Student> students, String ch) {
+		System.out.println("\nAre students with 'c'? : -> ");
+		List<Student> studentsWithCh = students.stream().filter(s -> s.getLastName().toLowerCase().contains(ch))
 				.map(Student::new).collect(Collectors.toList());
 		boolean anyMatchA = students.stream().anyMatch(s -> s.getLastName().toLowerCase().contains(ch));
 		System.out.println(anyMatchA);
 		System.out.println("\nStudents with 'c' in Last Name: ");
-		studentsWithC.forEach(s -> System.out.println(s.getLastName()));
+		studentsWithCh.forEach(s -> System.out.println(s.getLastName()));
 	}
 
 	private static void concatenateStudentsName(List<Student> students) {
 		System.out.println("\nConcatenate Name:");
-		students.stream().map(s -> s.getFirstName() + "" + s.getLastName()).forEach(s -> System.out.println(s));
+		students.stream().map(s -> s.getFirstName() + " " + s.getLastName()).forEach(s -> System.out.println(s));
 	}
 
 	private static void calculateAverageMark(List<Student> students) {
@@ -105,10 +105,12 @@ public class StudentMain {
 	private static void chekIfEven(List<Student> students) {
 		System.out.println("\nThe list of string is even:");
 		students.stream().map(s -> s.getFirstName()).forEach(s -> {
-			if (s.length() % 2 == 0)
+			if 
+				(s.length() % 2 == 0)
 				System.out.println(s.toUpperCase());
 			else
-				System.out.println(s);
+		{System.out.println(s);}
+			
 		});
 		
 	}
